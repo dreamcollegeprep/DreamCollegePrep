@@ -1,0 +1,273 @@
+*{
+	margin: 0;
+	padding: 0;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 10vh;
+	background: #bce6ff; /*#9ff3ff;*/ /*#dae5e8;*/
+	top: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+}
+
+.logo {
+	color: #c41d1d;
+	font-size: 2vw;
+	cursor: pointer;
+}
+
+.logo img {
+  height: 9vh;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+
+}
+
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links a{
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #004aad;
+}
+
+.nav-links li .current {
+	background-color: #ff5757;
+}
+
+.nav-links li:hover{
+	background-color: #ff5757;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: #00bf6a;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px){
+	.logo {
+		font-size: 3vh;
+	}
+	.nav-links {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	body{
+		overflow-x: hidden;
+	}
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 90vh;
+		top: 10vh;
+		background-color: #dae5e8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+	}
+	.nav-links li{
+		opacity: 0;
+	}
+	.burger{
+		display: block;
+	}
+
+}
+
+.nav-active{
+	transition: transform 0.5s ease-in;
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* Homepage
+-------------------------------------
+*/
+.home {
+	height: 100%;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.landing {
+	position: relative;
+	top: 10vh;
+	height: 85vh;
+	width: 100%;
+}
+
+.dream {
+	height: 75vh;
+	width: 48vw;
+  background-size: cover;
+  background-image: url(img/home.jpeg);
+	background-position: top;
+  display: flex;
+  flex-direction: column;
+	position: absolute;
+  /*clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);*/
+	right: 0;
+	align-items: center;
+}
+
+.dream h2 {
+	position: absolute;
+	top: 0;
+	display: flex;
+	font-size: 4vw;
+  color: #041e42;
+}
+
+.dream h3 {
+	color: white;
+	display: flex;
+	font-size: 4vw;
+	position: absolute;
+	top: 52vh;
+}
+
+.slant {
+	position: absolute;
+	height: 75vh;
+	width: 66vw;
+  top: 0;
+
+  background-color: #d85493; /*#2285c2;*/
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+	/*clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);*/
+	clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+	align-items: center;
+}
+
+.achieve {
+  position: absolute;
+	height: 75vh;
+	width: 66vw;
+  top: 0;
+	left: -4vw;
+
+  background-color: #d85493; /*#2285c2;*/
+  display: flex;
+  flex-direction: column;
+	/*clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);*/
+	clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+	align-items: center;
+
+}
+
+
+
+.achieve .signup button{
+  background-color: #6dd957; /*#7ed957;*/ /*#d85493;*/
+  /*border: none;*/
+  border-radius: 8px;
+	/*border-color: #041e42;*/
+	color: white; /*#041e42;*/
+  padding: 2vh 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 4vw;
+
+  transition-duration: 0.4s;
+}
+
+.achieve .signup button:hover {
+  color:  #6dd957; /*#7ed957;*/
+  background: white;
+}
+
+.achieve h1 {
+	position: absolute;
+	top: 15vh;
+	font-size: 3vw;
+	text-align: center;
+}
+
+.achieve h2 {
+	position: absolute;
+	top: 35vh;
+	font-size: 2vw;
+}
+
+.achieve .signup {
+	position: absolute;
+	top: 45vh;
+}
+
+.tutors {
+	background-color: white;/*#38b6ff;*/
+	display: flex;
+	height: 15vh;
+  justify-content: center;
+}
+
+.toptier {
+	display: flex;
+	height: 15vh;
+  align-items: center;
+	flex-direction: column;
+}
+
+.toptier h2 {
+	font-size: 5vh;
+}
+
+/* sat
+-------------------------------------------------
+*/
+
+.sat {
+	height: 100%;
+	width: 100vw;
+	overflow-x: hidden;
+}
